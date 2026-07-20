@@ -1,0 +1,189 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+html,
+body,
+[class*="css"]{
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   HIDE STREAMLIT BRANDING
+=========================== */
+#MainMenu{
+    visibility:hidden;
+}
+
+header{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+/* ===========================
+   PAGE LAYOUT
+=========================== */
+.main .block-container{
+    max-width:1400px;
+    padding:1rem 2rem 2rem;
+}
+
+/* ===========================
+   PREMIUM BACKGROUND
+=========================== */
+.stApp{
+    background:
+        radial-gradient(circle at top right,#DBEAFE 0%,transparent 30%),
+        radial-gradient(circle at bottom left,#E0F2FE 0%,transparent 35%),
+        linear-gradient(135deg,#F8FBFF,#EEF4FF,#FFFFFF);
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero{
+    background:linear-gradient(135deg,#2563EB,#3B82F6,#60A5FA);
+    border-radius:24px;
+    padding:45px;
+    color:white;
+    margin-bottom:35px;
+    box-shadow:0 20px 45px rgba(37,99,235,.35);
+    overflow:hidden;
+    position:relative;
+}
+
+.hero h1{
+    margin:0;
+    font-size:42px;
+    font-weight:800;
+}
+
+.hero p{
+    margin-top:12px;
+    font-size:18px;
+    opacity:.95;
+}
+
+/* ===========================
+   GLASS CARDS
+=========================== */
+.card{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:22px;
+    padding:28px;
+    margin-bottom:25px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+/* ===========================
+   METRIC CARDS
+=========================== */
+[data-testid="metric-container"]{
+    background:white;
+    border-left:5px solid #2563EB;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.stButton>button{
+
+    width:100%;
+    border:none;
+    border-radius:15px;
+    padding:15px;
+
+    background:linear-gradient(90deg,#2563EB,#3B82F6);
+
+    color:white;
+
+    font-size:18px;
+    font-weight:700;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.30);
+
+}
+
+.stButton>button:hover{
+
+    transform:scale(1.02);
+
+    background:linear-gradient(90deg,#1D4ED8,#2563EB);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+.stSlider{
+    padding-top:10px;
+}
+
+.stSelectbox div[data-baseweb="select"]{
+    border-radius:12px;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+section[data-testid="stSidebar"]{
+    background:linear-gradient(180deg,#1E293B,#0F172A);
+}
+
+section[data-testid="stSidebar"] *{
+    color:white !important;
+}
+
+/* ===========================
+   SMOOTH ANIMATION
+=========================== */
+*{
+    transition:.25s ease;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+@media (max-width:768px){
+
+.main .block-container{
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+.hero{
+    padding:25px;
+}
+
+.hero h1{
+    font-size:28px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.card{
+    padding:20px;
+}
+
+}

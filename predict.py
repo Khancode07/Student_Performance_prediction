@@ -9,8 +9,9 @@ questions to produce a prediction.
 Run this from the project root folder:
     python predict.py
 
-Requirements: each module's train_model.py must have been run first so that
-the .pkl model files exist inside their respective folders.
+Requirements: each module's training script (model.py / model2.py / model3.py)
+must have been run first so that the .pkl model files exist inside their
+respective folders.
 """
 
 import os
@@ -60,7 +61,7 @@ def ask_choice(prompt, options):
 def run_module1():
     model_path = os.path.join(MODULE1_DIR, "gpa_prediction_model.pkl")
     if not os.path.exists(model_path):
-        print("Model not found. Run train_model.py inside module1_gpa_prediction first.")
+        print("Model not found. Run model.py inside module1_gpa_prediction first.")
         return
 
     model = joblib.load(model_path)
@@ -83,7 +84,9 @@ def run_module1():
                  tutoring, parental_support, extracurricular, sports, music, volunteering]]
 
     predicted_gpa = model.predict(features)[0]
+    predicted_cgpa = (predicted_gpa / 4.0) * 10.0
     print(f"\nPredicted GPA: {predicted_gpa:.2f} (scale 0.0 - 4.0)")
+    print(f"Equivalent CGPA: {predicted_cgpa:.2f} (scale 0-10)")
 
 
 # ---------------------------------------------------------
@@ -95,7 +98,7 @@ def run_module2():
     target_encoder_path = os.path.join(MODULE2_DIR, "target_encoder.pkl")
 
     if not all(os.path.exists(p) for p in [model_path, encoders_path, target_encoder_path]):
-        print("Model not found. Run train_model.py inside module2_behavior_classification first.")
+        print("Model not found. Run model2.py inside module2_behavior_classification first.")
         return
 
     model = joblib.load(model_path)
@@ -138,7 +141,7 @@ def run_module2():
 def run_module3():
     model_path = os.path.join(MODULE3_DIR, "grade_prediction_model.pkl")
     if not os.path.exists(model_path):
-        print("Model not found. Run train_model.py inside module3_gpa_trend first.")
+        print("Model not found. Run model3.py inside module3_gpa_trend first.")
         return
 
     model = joblib.load(model_path)
@@ -171,7 +174,7 @@ def main():
     print("   STUDENT PERFORMANCE PREDICTION SYSTEM")
     print("=" * 55)
     print("\nWhat type of student are you predicting for?")
-    print("  1 - School Student  -> GPA Prediction")
+    print("  1 - School Student  -> Final Grade Prediction")
     print("  2 - School Student  -> Behavior/Engagement-based Classification")
     print("  3 - University Student -> Grade Band Prediction")
     print("  0 - Exit")

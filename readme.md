@@ -142,7 +142,7 @@ This creates the trained model files (.pkl) inside each folder.
 
 ### Step 3 — Run the web dashboard
 cd ..
-streamlit run app.py
+python -m streamlit run app.py
 
 This opens the dashboard in your browser at http://localhost:8501.
 
